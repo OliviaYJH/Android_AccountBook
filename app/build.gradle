@@ -6,6 +6,11 @@ plugins {
 android {
     compileSdk 31
 
+    // xml 사에 있는 파일들을 kotlin에서 활용하기 위해서는 binding 작업(메모리상에 올려주는 작업) 필요
+    viewBinding{
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.accountbook"
         minSdk 21
