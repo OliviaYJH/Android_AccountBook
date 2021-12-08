@@ -1,5 +1,6 @@
 package com.example.accountbook
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -34,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tablayout, binding.viewpager2){ tab, position ->
             tab.text = titles.get(position)
         }.attach()
+
+
+        binding.ibAdd.setOnClickListener {
+           startActivity(Intent(this, AddRecordActivity::class.java))
+        }
 
     }
 }
