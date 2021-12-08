@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/RC_AOS/AccountBook/app/src/main/res/layout/activity_main.xml" value="0.3515625" />
+        <entry key="..\:/RC_AOS/AccountBook/app/src/main/res/layout/fragment_accounts.xml" value="0.36614583333333334" />
+        <entry key="..\:/RC_AOS/AccountBook/app/src/main/res/layout/fragment_calendar.xml" value="0.36614583333333334" />
+        <entry key="..\:/RC_AOS/AccountBook/app/src/main/res/layout/fragment_day.xml" value="0.3515625" />
+        <entry key="..\:/RC_AOS/AccountBook/app/src/main/res/layout/fragment_week.xml" value="0.3515625" />
       </map>
     </option>
   </component>
