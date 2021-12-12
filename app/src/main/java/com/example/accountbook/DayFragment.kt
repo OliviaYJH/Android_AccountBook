@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.accountbook.databinding.FragmentDayBinding
@@ -40,6 +41,8 @@ class DayFragment : Fragment() {
         recyclerView = binding.recyclerView
 
         initRecyclerView()
+
+        binding.recyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
 
         adapter?.setOnClickItem {
             var intent = Intent(activity, AddRecordActivity::class.java)

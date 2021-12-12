@@ -29,6 +29,16 @@ class PickTypeFragment : BottomSheetDialogFragment() {
             mActivity.receiveData(binding.btnCash.text.toString())
             dismiss()
         }
+        binding.btnBank.setOnClickListener{
+            val mActivity = activity as AddRecordActivity
+            mActivity.receiveData(binding.btnBank.text.toString())
+            dismiss()
+        }
+        binding.btnCard.setOnClickListener{
+            val mActivity = activity as AddRecordActivity
+            mActivity.receiveData(binding.btnCard.text.toString())
+            dismiss()
+        }
 
         return binding.root
     }
