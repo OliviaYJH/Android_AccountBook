@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class AmountAdapter: RecyclerView.Adapter<AmountAdapter.AmountViewHolder>() {
     private var atdList: ArrayList<AmountModel> = ArrayList()
     private var onClickItem:((AmountModel) -> Unit)? = null
+    private var onClickDeleteItem:((AmountModel) -> Unit)? = null
 
     fun addItems(items: ArrayList<AmountModel>){
         this.atdList = items
@@ -19,6 +20,10 @@ class AmountAdapter: RecyclerView.Adapter<AmountAdapter.AmountViewHolder>() {
 
     fun setOnClickItem(callback: (AmountModel)->Unit){
         this.onClickItem = callback
+    }
+
+    fun onClickDeleteItem(callback: (AmountModel)->Unit){
+        this.onClickDeleteItem = callback
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = AmountViewHolder(
@@ -32,6 +37,10 @@ class AmountAdapter: RecyclerView.Adapter<AmountAdapter.AmountViewHolder>() {
         holder.itemView.setOnClickListener{
             onClickItem?.invoke(atd)
         }
+        holder.btnDelete.setOnClickListener{
+            onClickDeleteItem?.invoke(atd)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -44,7 +53,7 @@ class AmountAdapter: RecyclerView.Adapter<AmountAdapter.AmountViewHolder>() {
         private var type = view.findViewById<TextView>(R.id.tv_recycler_type)
         private var amount = view.findViewById<TextView>(R.id.tv_recycler_amount)
         private var context = view.findViewById<TextView>(R.id.tv_recycler_context)
-        private var btnDelete = view.findViewById<Button>(R.id.btn_recycler_delete)
+        var btnDelete = view.findViewById<Button>(R.id.btn_recycler_delete)
 
         fun bindView(atd: AmountModel){
             date.text = atd.date

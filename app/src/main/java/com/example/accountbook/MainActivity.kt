@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
             tab.text = titles.get(position)
         }.attach()
 
-
         binding.ibAdd.setOnClickListener {
            startActivity(Intent(this, AddRecordActivity::class.java))
         }
